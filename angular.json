@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyMarket": {
+    "my-market": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MyMarket",
+            "outputPath": "dist/my-market",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyMarket:build"
+            "browserTarget": "my-market:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MyMarket:build:production"
+              "browserTarget": "my-market:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyMarket:build"
+            "browserTarget": "my-market:build"
           }
         },
         "test": {
@@ -112,18 +112,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MyMarket:serve"
+            "devServerTarget": "my-market:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MyMarket:serve:production"
+              "devServerTarget": "my-market:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "MyMarket",
+  "defaultProject": "my-market",
   "cli": {
     "analytics": false
   }
