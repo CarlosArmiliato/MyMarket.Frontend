@@ -1,0 +1,23 @@
+#docker-compose up -d --build
+#docker-compose logs -f my_market_frontend
+#docker-compose exec my_market_frontend sh
+version: "3"
+services:
+  my_market_frontend:
+    container_name: my_market_frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.serve
+    ports:
+      - "4200:4200"
+    environment:
+      SHELL: /bin/bash
+      NODE_ENV: development
+    volumes:
+      - ~/.gitconfig:/etc/gitconfig
+      - ./src:/usr/src/app/src:cached
+      - ./e2e:/usr/src/app/e2e:cached
+      - ./tsconfig.json:/usr/src/app/tsconfig.json
+      - ./tslint.json:/usr/src/app/tslint.json
+      - ./package.json:/usr/src/app/package.json
+    entrypoint: ng serve --host 0.0.0.0 --poll 1
